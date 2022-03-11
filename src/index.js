@@ -5,9 +5,11 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 const element = React.createElement(
-  "div",
-  { className: "welcome-message" },
-  "hello-world"
+  "ol",
+  null,
+  React.createElement("li", null, "Michael"),
+  React.createElement("li", null, "Mustafa"),
+  React.createElement("li", null, "Benson")
 );
 ReactDOM.render(element, document.getElementById("root"));
 

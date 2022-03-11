@@ -4,12 +4,14 @@ import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+const people = [{ name: "Mustafa" }, { name: "Stephen" }, { name: "Abdul" }];
+
 const element = React.createElement(
   "ol",
   null,
-  React.createElement("li", null, "Michael"),
-  React.createElement("li", null, "Mustafa"),
-  React.createElement("li", null, "Benson")
+  people.map((person, index) =>
+    React.createElement("li", { key: index }, person.name)
+  )
 );
 ReactDOM.render(element, document.getElementById("root"));
 

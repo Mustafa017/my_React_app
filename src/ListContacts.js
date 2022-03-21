@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 // creating a stateless function component.
 // Note that the first parameter is props and we don't use the `this` keyword.
 function ListContact(props) {
@@ -27,5 +27,11 @@ function ListContact(props) {
     </ol>
   );
 }
+
+// Use PropTypes to type check the data passed to props
+ListContact.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};
 
 export default ListContact;

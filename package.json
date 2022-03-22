@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.8.1"
+    "escape-string-regexp": "^5.0.0",
+    "prop-types": "^15.8.1",
+    "sort-by": "^1.2.0"
   }
 }

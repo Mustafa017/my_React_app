@@ -16,9 +16,13 @@ class App extends Component {
   // passing a function to setState instead of an object.
   // This is done if your new state depends on the current state.
   removeContact = (contact) => {
+    // remove from component's state
     this.setState((state) => ({
       contacts: state.contacts.filter((c) => c.id !== contact.id),
     }));
+
+    // remove from database
+    ContactsAPI.remove(contact);
   };
   render() {
     return (

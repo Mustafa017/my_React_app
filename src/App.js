@@ -8,7 +8,6 @@ class App extends Component {
   // move the contacts array into the state so that react can track changes to its contents.
   // e.g when an entry is deleted
   state = {
-    screen: "list",
     contacts: [],
   };
   componentDidMount() {

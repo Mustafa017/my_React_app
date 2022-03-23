@@ -7,7 +7,7 @@ class App extends Component {
   // move the contacts array into the state so that react can track changes to its contents.
   // e.g when an entry is deleted
   state = {
-    screen: "create",
+    screen: "list",
     contacts: [],
   };
   componentDidMount() {
@@ -33,6 +33,11 @@ class App extends Component {
           <ListContact
             onDeleteContact={this.removeContact}
             contacts={this.state.contacts}
+            onNavigate={() => {
+              this.setState({
+                screen: "create",
+              });
+            }}
           ></ListContact>
         )}
         {this.state.screen === "create" && <CreateContact></CreateContact>}

@@ -30,7 +30,7 @@ class ListContact extends Component {
   };
 
   render() {
-    const { contacts, onDeleteContact } = this.props;
+    const { contacts, onDeleteContact, onNavigate } = this.props;
     const { query } = this.state;
     let showingContacts;
 
@@ -58,6 +58,9 @@ class ListContact extends Component {
               this.updateQuery(event.target.value);
             }}
           />
+          <a href="#create" onClick={onNavigate} className="add-contact">
+            Add Contact
+          </a>
         </div>
         {/* {JSON.stringify(this.state)} */}
 

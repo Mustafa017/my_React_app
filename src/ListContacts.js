@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import sortBy from "sort-by";
 import escapeRegExp from "escape-string-regexp";
@@ -30,7 +31,7 @@ class ListContact extends Component {
   };
 
   render() {
-    const { contacts, onDeleteContact, onNavigate } = this.props;
+    const { contacts, onDeleteContact } = this.props;
     const { query } = this.state;
     let showingContacts;
 
@@ -58,9 +59,9 @@ class ListContact extends Component {
               this.updateQuery(event.target.value);
             }}
           />
-          <a href="#create" onClick={onNavigate} className="add-contact">
+          <Link to="/create" className="add-contact">
             Add Contact
-          </a>
+          </Link>
         </div>
         {/* {JSON.stringify(this.state)} */}
 

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import ListContact from "./ListContacts";
+import CreateContact from "./CreateContact";
 import * as ContactsAPI from "./utils/ContactsAPI";
 
 class App extends Component {
   // move the contacts array into the state so that react can track changes to its contents.
   // e.g when an entry is deleted
   state = {
+    screen: "create",
     contacts: [],
   };
   componentDidMount() {
@@ -26,10 +28,15 @@ class App extends Component {
   };
   render() {
     return (
-      <ListContact
-        onDeleteContact={this.removeContact}
-        contacts={this.state.contacts}
-      ></ListContact>
+      <div>
+        {this.state.screen === "list" && (
+          <ListContact
+            onDeleteContact={this.removeContact}
+            contacts={this.state.contacts}
+          ></ListContact>
+        )}
+        {this.state.screen === "create" && <CreateContact></CreateContact>}
+      </div>
     );
   }
 }
